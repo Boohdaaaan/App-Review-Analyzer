@@ -1,0 +1,8 @@
+{% if summary %}
+Previous analysis summary: {{ summary }}
+{% endif %}
+
+Here are the reviews to analyze:
+{% for review in reviews %}
+{{ loop.index }}. <review>{{ review }}</review>
+{% endfor %}
