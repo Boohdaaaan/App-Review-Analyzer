@@ -1,6 +1,6 @@
 # App Reviews Analyzer
 
-FastAPI-based service that fetches, analyzes, and provides insights from mobile app reviews across the App Store and Google Play Market. The service uses advanced machine learning for sentiment analysis and LLM-powered review summarization.
+FastAPI-based service that fetches, analyzes and provides insights from mobile app reviews across the App Store and Google Play Market. The service uses advanced machine learning for sentiment analysis and LLM-powered review summarization.
 
 ## Features
 
@@ -11,7 +11,7 @@ FastAPI-based service that fetches, analyzes, and provides insights from mobile 
 - **Advanced Analytics**
   - Sentiment analysis using `tabularisai/multilingual-sentiment-analysis` model. This model is a fine-tuned version of `distilbert/distilbert-base-multilingual-cased` for multilingual sentiment analysis. Number of Classes: 5 (Very Negative, Negative, Neutral, Positive, Very Positive)
   - Rating, Geographical and Sentiment distribution of reviews.
-  - AI-generated review summarization using Anthropic's Claude
+  - Comprehensive AI-generated summary powered by Anthropic's Claude that analyzes key themes, identifies critical issues, provides actionable suggestions and evaluates overall sentiment across batches of reviews.
 
 - **Rich Visualization**
   - Rating distribution visualization
