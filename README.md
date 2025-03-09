@@ -4,38 +4,34 @@ FastAPI-based service that fetches, analyzes, and provides insights from mobile 
 
 ## Features
 
-- **Multi-Platform Support**
-  - App Store reviews scraping
-  - Google Play Market reviews scraping
+- **Data Sources**
+  - App Store
+  - Google Play Market
 
 - **Advanced Analytics**
-  - Sentiment analysis using HuggingFace transformers
-  - Rating distribution analysis
-  - Geographical distribution of reviews
-  - LLM-powered review summarization using Anthropic's Claude
+  - Sentiment analysis using `tabularisai/multilingual-sentiment-analysis` model. This model is a fine-tuned version of `distilbert/distilbert-base-multilingual-cased` for multilingual sentiment analysis. Number of Classes: 5 (Very Negative, Negative, Neutral, Positive, Very Positive)
+  - Rating, Geographical and Sentiment distribution of reviews.
+  - AI-generated review summarization using Anthropic's Claude
 
 - **Rich Visualization**
-  - Interactive charts and graphs
-  - Rating distribution plots
+  - Rating distribution visualization
   - Sentiment distribution visualization
-  - Geographical review distribution
+  - Geographical distribution visualization
 
 - **API Features**
   - RESTful API endpoints
-  - Customizable number of reviews (1-1000)
   - Flexible response format
-  - Health check endpoint
+  - Customizable number of reviews (1-1000)
 
 ## Technologies
 
 - **Backend Framework**: FastAPI
 - **Python Version**: 3.11
 - **Key Libraries**:
+  - `app-store-scraper` & `google-play-scraper` for data collection
   - `langchain` & `langchain-anthropic` for LLM integration
   - `transformers` for sentiment analysis
   - `matplotlib` for data visualization
-  - `app-store-scraper` & `google-play-scraper` for data collection
-  - `pandas` for data processing
   - `uvicorn` for ASGI server
 
 ## Setup and Installation
@@ -50,7 +46,7 @@ FastAPI-based service that fetches, analyzes, and provides insights from mobile 
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd app-reviews
+cd App-Reviews-Analyzer
 ```
 
 2. Create and configure environment variables:
@@ -100,22 +96,16 @@ Parameters:
 - `reviews_source`: Either "app_store" or "google_play_market"
 - `num_reviews`: Number of reviews to analyze (1-1000)
 - `country`: Country code (default: "us")
-- `include_llm_overview`: Include AI-generated overview (default: true)
+- `include_llm_summary`: Include AI-generated summary (default: true)
 - `include_metrics`: Include statistical metrics (default: true)
 - `include_plots`: Include visualization plots (default: true)
 - `include_raw_data`: Include raw review data (default: true)
-
-### Health Check
-
-```bash
-curl "http://localhost:8000/health"
-```
 
 ## Response Schema
 
 ```json
 {
-  "llm_overview": "Summary of reviews...",
+  "llm_summary": "Summary of reviews...",
   "metrics": {
     "total_reviews": 100,
     "average_rating": 4.5,
@@ -133,3 +123,21 @@ curl "http://localhost:8000/health"
   }
 }
 ```
+
+## Examples
+
+## APP 1
+![Example Analysis Plot](plots/plots_1.png)
+*Summary:*
+```summary```
+
+## APP 2
+![Example Analysis Plot](plots/plots_1.png)
+*Summary:*
+```summary```
+
+## APP 3
+![Example Analysis Plot](plots/plots_1.png)
+*Summary:*
+```summary```
+

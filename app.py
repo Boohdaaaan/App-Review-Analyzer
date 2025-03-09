@@ -11,7 +11,7 @@ from src.scrapers import (
 from src.data_analysis.metrics import calculate_metrics
 from src.data_analysis.plots import generate_plots
 from src.data_analysis.sentiment_analysis import analyze_reviews_sentiment
-from src.llm.llm_pipeline import generate_overview
+from src.llm.llm_pipeline import generate_summary
 
 logging.basicConfig(
     level=logging.INFO,
@@ -31,7 +31,7 @@ async def healthcheck():
 
 
 class ReviewResponse(BaseModel):
-    llm_overview: str | None = None
+    llm_summary: str | None = None
     metrics: dict | None = None
     plots: dict | None = None
     raw_data: dict| None = None
@@ -44,7 +44,7 @@ async def get_app_reviews(
     country: str = "us",
     num_reviews: int = Query(default=100, ge=1, le=1000),
     reviews_source: Literal["app_store", "google_play_market"] = "app_store",
-    include_llm_overview: bool = True,
+    include_llm_summary: bool = True,
     include_metrics: bool = True,
     include_plots: bool = True,
     include_raw_data: bool = True,
@@ -80,8 +80,8 @@ async def get_app_reviews(
         reviews = analyze_reviews_sentiment(reviews)
         logger.debug("Sentiment analysis completed")
 
-        if include_llm_overview:
-            response.llm_overview = generate_overview(reviews)
+        if include_llm_summary:
+            response.llm_summary = generate_summary(reviews)
             logger.debug("LLM overview generation completed") 
 
         if include_metrics or include_plots:

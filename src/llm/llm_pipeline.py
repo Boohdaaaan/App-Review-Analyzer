@@ -31,7 +31,7 @@ def _get_lcel_pipeline(llm) -> RunnableSerializable[list[Review], str]:
     return lcel_pipeline
 
 
-def generate_overview(reviews: list[Review]) -> str:
+def generate_summary(reviews: list[Review]) -> str:
     try:
         llm = get_anthropic_llm()
         chain = _get_lcel_pipeline(llm)
