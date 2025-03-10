@@ -206,11 +206,13 @@ ChatGPT's mobile app maintains its strong market position with an overwhelmingly
 4. Feature Additions
 - Add user feedback mechanism within app
 - Implement conversation backup system
-- Enhance multimedia interaction capabilities```
+- Enhance multimedia interaction capabilities
+```
 
 ## Pokémon GO
 ![Pokémon GO Analysis Plot](plots/pokemon_go.png)
-```Pokémon GO continues to maintain a divided user base, with significant shifts in user sentiment primarily driven by recent technical issues and monetization changes. The game faces mounting criticism over its increasingly aggressive monetization strategy while still retaining loyal players who appreciate its core features and social aspects. Technical stability has become a major concern following recent updates, with many users reporting critical issues preventing basic gameplay. The overall user experience shows a clear divide between paying and non-paying players, with accessibility and value proposition becoming increasingly contentious issues.
+```
+Pokémon GO continues to maintain a divided user base, with significant shifts in user sentiment primarily driven by recent technical issues and monetization changes. The game faces mounting criticism over its increasingly aggressive monetization strategy while still retaining loyal players who appreciate its core features and social aspects. Technical stability has become a major concern following recent updates, with many users reporting critical issues preventing basic gameplay. The overall user experience shows a clear divide between paying and non-paying players, with accessibility and value proposition becoming increasingly contentious issues.
 
 **Major Themes:**
 1. Technical Stability
@@ -318,19 +320,14 @@ Long-term Improvements:
 - Optimize performance across devices
 - Strengthen server stability
 - Improve location services
-- Enhanced testing procedures```
+- Enhanced testing procedures
+```
 
 ## GitHub
 ![Example Analysis Plot](plots/github.png)
 ```
 **Overview**:
 GitHub's mobile app maintains its position as a useful companion tool for developers, with mixed user satisfaction levels. The app successfully serves basic GitHub functions while continuing to face challenges with authentication and feature completeness. User sentiment remains divided, with strong appreciation for mobile convenience and basic functionality, but persistent frustration over authentication issues and limited feature set compared to the web version. Recent feedback highlights improved development capabilities and Copilot integration, though core challenges persist.
-
-Key metrics:
-- Strong positive feedback for basic functionality and mobile convenience
-- Significant authentication and login challenges continue
-- Growing appreciation for new development features and Copilot integration
-- Consistent demand for expanded repository management capabilities
 
 **Major Themes**:
 1. Authentication and Access
