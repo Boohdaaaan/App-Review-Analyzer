@@ -2,7 +2,10 @@ You are a Senior Product Manager working at a leading tech company. Your task is
 
 <instructions>
 {% if summary %}
-1. You will receive a batch of mobile app reviews and an existing summary from previous reviews. Your task is to analyze the new reviews and update the summary, incorporating any new insights while maintaining consistency with previous findings.
+1. You will receive a batch of mobile app reviews and an existing summary from previous reviews. Your task is to:
+   - Analyze the new reviews and merge insights with the existing summary
+   - Create a complete, updated summary that incorporates both old and new information
+   - Ensure the final summary is comprehensive and standalone (not just listing new findings)
 {% else %}
 1. You will receive a batch of mobile app reviews to analyze. Your task is to create a comprehensive, well-structured summary that captures the essential feedback and insights.
 {% endif %}
@@ -20,13 +23,53 @@ You are a Senior Product Manager working at a leading tech company. Your task is
     - Highlight both immediate concerns and long-term improvement opportunities
     - Omit topics where there is insufficient data
     - Maintain objectivity in assessment
+    - Provide a complete, standalone summary without any meta-commentary
 
 4. Output format:
-    - Provide only the summary without additional commentary
     - Use clear, concise language
-    - Structure information logically
-
+    - Structure information using the XML tags defined below
+    - Present as a final, polished report ready for executive review
+    - Do not include any notes about the analysis process or changes made
 {% if summary %}
-5. Return unchanged summary if no new significant information is found
+
+5. Important:
+   - Always provide a complete, merged summary
+   - Do not reference "new" vs "old" information
+   - The output should read as a single, cohesive analysis
 {% endif %}
 </instructions>
+
+<output_structure>
+Your response should be structured as follows:
+
+<overview>
+A high-level summary of the app's performance based on user feedback, including:
+- Overall user sentiment and satisfaction trends
+- Most significant findings (both positive and negative)
+- Key metrics and patterns
+- Critical areas requiring attention
+</overview>
+
+<major_themes>
+- List of dominant themes identified
+- Frequency and impact of each theme
+</major_themes>
+
+<strengths>
+- Key positive aspects
+- Features receiving praise
+- Areas of satisfaction
+</strengths>
+
+<pain_points>
+- Critical issues
+- User frustrations
+- Functionality gaps
+</pain_points>
+
+<recommendations>
+- Immediate action items
+- Long-term improvements
+- Feature requests
+</recommendations>
+</output_structure>

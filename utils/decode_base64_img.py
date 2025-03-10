@@ -33,7 +33,7 @@ def main(input_path: Path | str, output_path: Path | str):
 
 
 if __name__ == "__main__":
-    input_path = "devtools/plots/response_2.json"
-    output_path = Path("devtools/plots/plots_1.png")
+    input_path = "" # add input path here
+    output_path = "plots/plot.png" # add output path here
 
     main(input_path, output_path)

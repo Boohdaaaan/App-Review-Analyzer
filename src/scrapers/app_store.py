@@ -25,7 +25,7 @@ def fetch_app_reviews(app_name: str, app_id: int, country: str = "us", num_revie
 
         fetched_reviews = [
             Review(
-                review_id=None, # App Store does not provide review IDs
+                review_id=None, # app_store_scraper does not provide review IDs
                 source="app_store",
                 user_name=review["userName"],
                 country=country,

@@ -1,5 +1,5 @@
 import logging
-from google_play_scraper import Sort, reviews
+from google_play_scraper import Sort, reviews, app
 
 from src.models import Review
 
@@ -47,3 +47,27 @@ def fetch_app_reviews(app_name: str, app_id: str, country: str = "us", num_revie
     except Exception as e:
         logger.error(f"Error fetching Google Play reviews: {e}")
         return []
+
+
+def fetch_app_description(app_id: str, country: str = "us") -> str | None:
+    """
+    Fetch the description of an app from the Google Play Store.
+    
+    Args:
+        app_id: Package name/ID of the app on Google Play Store
+        country: Country code for the store (default: "us")
+    
+    Returns:
+        str: App description text. Returns empty string if description cannot be fetched.
+    """
+    try:
+        result = app(
+            app_id=app_id,
+            lang="en",
+            country=country,
+        )
+    except Exception as e:
+        logger.error(f"Error fetching Google Play description: {e}")
+        return None
+
+    return result["description"]

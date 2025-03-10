@@ -60,28 +60,27 @@ async def get_app_reviews(
             "reviews_source": reviews_source
         }
     )
-    
+
     try:
-        if reviews_source == "app_store":
-            reviews = app_store_scraper.fetch_app_reviews(app_name, app_id, country, num_reviews)
-        elif reviews_source == "google_play_market":
-            reviews = google_play_market_scraper.fetch_app_reviews(app_name, app_id, country, num_reviews)
+        scraper = app_store_scraper if reviews_source == "app_store" else google_play_market_scraper
+        reviews = scraper.fetch_app_reviews(app_name, app_id, country, num_reviews)
+
+        if reviews_source == "google_play_market" and include_llm_summary:
+            app_description = scraper.fetch_app_description(app_id, country)
         else:
-            logger.error(f"Invalid reviews source provided: {reviews_source}")
-            raise HTTPException(status_code=400, detail="Invalid reviews source")
-        
+            app_description = None
         if not reviews:
             logger.warning(f"No reviews found for app '{app_name}' (ID: {app_id})")
             raise HTTPException(status_code=404, detail="No reviews found")
-        
+
         logger.info(f"Successfully fetched {len(reviews)} reviews")
-        
+
         response = ReviewResponse()
         reviews = analyze_reviews_sentiment(reviews)
         logger.debug("Sentiment analysis completed")
 
         if include_llm_summary:
-            response.llm_summary = generate_summary(reviews)
+            response.llm_summary = generate_summary(reviews, app_name, app_description)
             logger.debug("LLM overview generation completed") 
 
         if include_metrics or include_plots:
@@ -98,10 +97,10 @@ async def get_app_reviews(
         if include_raw_data:
             response.raw_data = {"reviews": [review.model_dump() for review in reviews]}
             logger.debug("Raw data prepared")
-        
+
         logger.info("Successfully processed all requested data")
         return response
-        
+
     except Exception as e:
         logger.error(f"Error processing reviews: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail=str(e))
