@@ -5,7 +5,7 @@ FastAPI-based service that fetches, analyzes and provides insights from mobile a
 ## Features
 
 - **Data Sources**
-  - Google Play Market (recommended)
+  - Google Play Market (Recommended)
   - App Store
 
 - **Advanced Analytics**
@@ -120,8 +120,11 @@ Parameters:
 
 ## Examples
 
+Below are analyses of popular apps, including visualizations and comprehensive review summaries.
+
 ## ChatGPT
 ![ChatGPT Analysis Plot](plots/chatgpt.png)
+**AI-Generated Overview**:
 ```
 **Overview**:
 ChatGPT's mobile app maintains its strong market position with an overwhelmingly positive user reception, evidenced by predominantly 5-star ratings. The application continues to excel as a versatile AI assistant, particularly valued for its educational support, personal assistance capabilities, and comprehensive knowledge base. Users consistently praise its ability to provide detailed, helpful responses across various use cases, though some technical limitations and feature restrictions remain areas for improvement. The app has established itself as an essential tool for many users, with many highlighting its role as both an educational companion and personal assistant.
@@ -211,6 +214,7 @@ ChatGPT's mobile app maintains its strong market position with an overwhelmingly
 
 ## Pokémon GO
 ![Pokémon GO Analysis Plot](plots/pokemon_go.png)
+**AI-Generated Overview**:
 ```
 Pokémon GO continues to maintain a divided user base, with significant shifts in user sentiment primarily driven by recent technical issues and monetization changes. The game faces mounting criticism over its increasingly aggressive monetization strategy while still retaining loyal players who appreciate its core features and social aspects. Technical stability has become a major concern following recent updates, with many users reporting critical issues preventing basic gameplay. The overall user experience shows a clear divide between paying and non-paying players, with accessibility and value proposition becoming increasingly contentious issues.
 
@@ -325,6 +329,7 @@ Long-term Improvements:
 
 ## GitHub
 ![Example Analysis Plot](plots/github.png)
+**AI-Generated Overview**:
 ```
 **Overview**:
 GitHub's mobile app maintains its position as a useful companion tool for developers, with mixed user satisfaction levels. The app successfully serves basic GitHub functions while continuing to face challenges with authentication and feature completeness. User sentiment remains divided, with strong appreciation for mobile convenience and basic functionality, but persistent frustration over authentication issues and limited feature set compared to the web version. Recent feedback highlights improved development capabilities and Copilot integration, though core challenges persist.
