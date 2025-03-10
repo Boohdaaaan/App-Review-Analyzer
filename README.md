@@ -9,19 +9,14 @@ FastAPI-based service that fetches, analyzes and provides insights from mobile a
   - Google Play Market
 
 - **Advanced Analytics**
-  - Sentiment analysis using `tabularisai/multilingual-sentiment-analysis` model. This model is a fine-tuned version of `distilbert/distilbert-base-multilingual-cased` for multilingual sentiment analysis. Number of Classes: 5 (Very Negative, Negative, Neutral, Positive, Very Positive)
-  - Rating, Geographical and Sentiment distribution of reviews.
-  - Comprehensive AI-generated summary powered by Anthropic's Claude that analyzes key themes, identifies critical issues, provides actionable suggestions and evaluates overall sentiment across batches of reviews.
-
-- **Rich Visualization**
-  - Rating distribution visualization
-  - Sentiment distribution visualization
-  - Geographical distribution visualization
+  - **Statistical Processing**: Comprehensive analysis of rating distributions, geographical patterns, and sentiment trends across review data.
+  - **Rich Analytics**: Visualization of key metrics and statistical insights.
+  - **Sentiment Analysis**: Powered by `tabularisai/multilingual-sentiment-analysis` model, a fine-tuned version of `distilbert/distilbert-base-multilingual-cased`. Supports multilingual review classification across 5 sentiment categories (Very Negative to Very Positive).
+  - **AI-Powered Insights**: Leverages Anthropic's Claude to process reviews, generating detailed summaries that highlight key themes, critical issues and actionable product recommendations.
 
 - **API Features**
   - RESTful API endpoints
   - Flexible response format
-  - Customizable number of reviews (1-1000)
 
 ## Technologies
 
@@ -43,8 +38,7 @@ FastAPI-based service that fetches, analyzes and provides insights from mobile a
 
 ### Environment Setup
 
-1. Clone the repository:
-```bash
+1. Clone the repository:```bash
 git clone <repository-url>
 cd App-Reviews-Analyzer
 ```
@@ -140,4 +134,5 @@ Parameters:
 ![Example Analysis Plot](plots/plots_1.png)
 *Summary:*
 ```summary```
+
 
